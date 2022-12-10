@@ -1,26 +1,24 @@
 package com.WebSer.institute.Layers.Repository;
 
 import com.WebSer.institute.Layers.domains.Course;
-import org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration;
+import com.WebSer.institute.Layers.domains.Teacher;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class CourseRepository {
-
+public class TeacherRepository {
     private JdbcTemplate jdbcTemplate;
 
-    public CourseRepository(JdbcTemplate jdbcTemplate) {
+    public TeacherRepository(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public Course getCourse(Long id)
+    public Teacher getTeacher(Long id)
     {
-        RowMapper<Course> rowMapper = new BeanPropertyRowMapper<>(Course.class);
-        Course course = jdbcTemplate.queryForObject("select * from Courses where id =?",rowMapper , id);
-        return course;
+        RowMapper<Teacher> rowMapper = new BeanPropertyRowMapper<>(Teacher.class);
+        Teacher teacher = jdbcTemplate.queryForObject("select * from teachers where id =?",rowMapper , id);
+        return teacher;
     }
-
 }

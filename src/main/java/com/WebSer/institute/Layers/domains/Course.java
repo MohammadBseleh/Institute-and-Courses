@@ -1,15 +1,16 @@
 package com.WebSer.institute.Layers.domains;
 
 import javax.xml.crypto.Data;
+import java.time.Instant;
 
 public class Course {
     private String name;
     private Integer hours;
     private String lecturer;
-    private Data startDate;
-    private Data endDate;
+    private Instant startDate;
+    private Instant endDate;
 
-    public Course(String name, Integer hours, String lecturer, Data startDate, Data endDate) {
+    public Course(String name, Integer hours, String lecturer, Instant startDate, Instant endDate) {
         this.name = name;
         this.hours = hours;
         this.lecturer = lecturer;
@@ -32,11 +33,11 @@ public class Course {
         return lecturer;
     }
 
-    public Data getStartDate() {
+    public Instant getStartDate() {
         return startDate;
     }
 
-    public Data getEndDate() {
+    public Instant getEndDate() {
         return endDate;
     }
 
@@ -52,11 +53,11 @@ public class Course {
         this.lecturer = lecturer;
     }
 
-    public void setStartDate(Data startDate) {
+    public void setStartDate(Instant startDate) {
         this.startDate = startDate;
     }
 
-    public void setEndDate(Data endDate) {
+    public void setEndDate(Instant endDate) {
         this.endDate = endDate;
     }
 
@@ -68,5 +69,16 @@ public class Course {
     @Override
     public boolean equals(Object obj) {
         return super.equals(obj);
+    }
+
+    @Override
+    public String toString() {
+        return "Course{" +
+                "name='" + name + '\'' +
+                ", hours=" + hours +
+                ", lecturer='" + lecturer + '\'' +
+                ", startDate=" + startDate +
+                ", endDate=" + endDate +
+                '}';
     }
 }
