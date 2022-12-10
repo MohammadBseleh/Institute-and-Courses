@@ -9,7 +9,7 @@ public class HelloWorldSpringWeb {
     @GetMapping
    public String Hello()
     {
-        return "Hello from Mohammad";
+        return "Hello from Mohammad , update";
     }
 
 }
