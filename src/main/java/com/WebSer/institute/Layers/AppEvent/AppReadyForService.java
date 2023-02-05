@@ -24,7 +24,11 @@ public class AppReadyForService {
     public void doSomethingAfterStart()
     {
         try {
+<<<<<<< HEAD
             System.out.println(courseService.readCourse(1L));
+=======
+            courseService.deleteCourse(15L);
+>>>>>>> 94f963f (commit for task1 (#2))
         }catch (RuntimeException e)
         {
             System.out.println(e.getMessage());
