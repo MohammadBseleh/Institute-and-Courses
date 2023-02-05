@@ -49,7 +49,7 @@ public class StudentService {
             System.out.println("Student with id " + id + " is called");
         }
         else {
-            throw new DataNotFoundException("Student with id " + id + " does now exist");
+            throw new DataNotFoundException("Student does not exist");
         }
     }
 

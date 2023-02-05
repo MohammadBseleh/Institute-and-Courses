@@ -44,7 +44,7 @@ public class TeacherService {
             System.out.println("Teacher with id " + id + " is called");
         }
         else {
-            throw new DataNotFoundException("Teacher with id " + id + " does now exist");
+            throw new DataNotFoundException("Teacher does not exist");
         }
     }
 }

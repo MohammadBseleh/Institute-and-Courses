@@ -47,7 +47,7 @@ public class CourseService {
             System.out.println("Course with id " + id + " is called");
         }
         else {
-            throw new DataNotFoundException("Course with id " + id + " does now exist");
+            throw new DataNotFoundException("Course does not exist");
         }
     }
 
