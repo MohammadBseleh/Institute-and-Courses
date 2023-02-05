@@ -24,7 +24,7 @@ public class AppReadyForService {
     public void doSomethingAfterStart()
     {
         try {
-            courseService.deleteCourse(15L);
+
         }catch (RuntimeException e)
         {
             System.out.println(e.getMessage());
