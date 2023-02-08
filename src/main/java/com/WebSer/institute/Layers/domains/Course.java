@@ -1,10 +1,21 @@
 package com.WebSer.institute.Layers.domains;
 
+
+
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.xml.crypto.Data;
 import java.time.Instant;
 import java.util.Objects;
-
+@Entity
+@Table(name = "courses")
 public class Course {
+    @Id
+    @GeneratedValue(generator = "courses_id_seq")
+    private Long id;
     private String name;
     private Integer hours;
     private String lecturer;
@@ -17,6 +28,14 @@ public class Course {
         this.lecturer = lecturer;
         this.startDate = startDate;
         this.endDate = endDate;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Course() {

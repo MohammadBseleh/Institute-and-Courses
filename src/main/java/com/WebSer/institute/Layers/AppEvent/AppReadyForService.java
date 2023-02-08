@@ -25,11 +25,9 @@ public class AppReadyForService {
     {
         try {
 
-            System.out.println(courseService.readCourse(1L));
-            courseService.deleteCourse(15L);
+
         }catch (RuntimeException e)
         {
-            System.out.println(e.getMessage());
         }
     }
 }
