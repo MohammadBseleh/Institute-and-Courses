@@ -24,10 +24,10 @@ public class AppReadyForService {
     public void doSomethingAfterStart()
     {
         try {
-
-
+            System.out.println(courseService.readCourse(1L));
         }catch (RuntimeException e)
         {
+            System.out.println(e.getMessage());
         }
     }
 }

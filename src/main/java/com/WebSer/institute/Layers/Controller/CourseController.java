@@ -15,8 +15,10 @@ public class CourseController {
     }
 
     @RequestMapping(method = RequestMethod.GET , path = "/{id}")
+
     public CourseDTO getCourse(@PathVariable Long id) {return courseService.readCourse(id);}
 
+    
     @RequestMapping(method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
     public CourseDTO createCourse(@RequestBody CourseDTO courseDTO)
