@@ -2,6 +2,7 @@ package com.WebSer.institute.Layers.domains;
 
 import javax.xml.crypto.Data;
 import java.time.Instant;
+import java.util.Objects;
 
 public class Course {
     private String name;
@@ -62,13 +63,16 @@ public class Course {
     }
 
     @Override
-    public int hashCode() {
-        return super.hashCode();
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Course)) return false;
+        Course course = (Course) o;
+        return getName().equals(course.getName()) && getHours().equals(course.getHours()) && getLecturer().equals(course.getLecturer()) && getStartDate().equals(course.getStartDate()) && getEndDate().equals(course.getEndDate());
     }
 
     @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
+    public int hashCode() {
+        return Objects.hash(getName(), getHours(), getLecturer(), getStartDate(), getEndDate());
     }
 
     @Override
