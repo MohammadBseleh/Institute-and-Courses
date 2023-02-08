@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class StudentService {
-  private StudentRepository stRepo;
+    private StudentRepository stRepo;
 
     public StudentService(StudentRepository stRepo) {
         this.stRepo = stRepo;

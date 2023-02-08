@@ -1,9 +1,21 @@
 package com.WebSer.institute.Layers.domains;
 
+
+
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.xml.crypto.Data;
 import java.time.Instant;
-
+import java.util.Objects;
+@Entity
+@Table(name = "courses")
 public class Course {
+    @Id
+    @GeneratedValue(generator = "courses_id_seq")
+    private Long id;
     private String name;
     private Integer hours;
     private String lecturer;
@@ -16,6 +28,14 @@ public class Course {
         this.lecturer = lecturer;
         this.startDate = startDate;
         this.endDate = endDate;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Course() {
@@ -62,13 +82,16 @@ public class Course {
     }
 
     @Override
-    public int hashCode() {
-        return super.hashCode();
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Course)) return false;
+        Course course = (Course) o;
+        return getName().equals(course.getName()) && getHours().equals(course.getHours()) && getLecturer().equals(course.getLecturer()) && getStartDate().equals(course.getStartDate()) && getEndDate().equals(course.getEndDate());
     }
 
     @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
+    public int hashCode() {
+        return Objects.hash(getName(), getHours(), getLecturer(), getStartDate(), getEndDate());
     }
 
     @Override

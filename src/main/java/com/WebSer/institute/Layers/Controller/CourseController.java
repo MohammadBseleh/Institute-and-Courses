@@ -15,22 +15,24 @@ public class CourseController {
     }
 
     @RequestMapping(method = RequestMethod.GET , path = "/{id}")
-    public CourseDTO getCourse(@PathVariable Long id)
-    {
-        return courseService.readCourse(id);
-    }
+
+    public CourseDTO getCourse(@PathVariable Long id) {return courseService.readCourse(id);}
+
+    
     @RequestMapping(method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
     public CourseDTO createCourse(@RequestBody CourseDTO courseDTO)
     {
         return courseService.createCourse(courseDTO);
     }
+
     @RequestMapping(method = RequestMethod.DELETE, path = "/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteCourse(@PathVariable Long id)
     {
          courseService.deleteCourse(id);
     }
+
     @RequestMapping(method = RequestMethod.PUT, path = "/{id}")
     @ResponseStatus(HttpStatus.ACCEPTED)
     public CourseDTO updateCourse(@RequestBody CourseDTO courseDTO,
